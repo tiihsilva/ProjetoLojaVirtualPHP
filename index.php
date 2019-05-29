@@ -1,12 +1,16 @@
 <?php 
+include "funcoes.php"
+$usuario = logarUsuario("Tiago Ferreira", 1);
 
-$usuario = ["logado"=>true, "nome"=>"Tiago Ferreira","nivelAcesso" => 0];
 //$usuario = "";
+
 $produtos = [
-    "produto1" => ["nome" =>"Curso Fullstack","descricao"=>"O curso fullstack ensina programacao","preco"=> 1200 , "img"=>"./img/thor.jpg"],
-    "produto2" => ["nome" =>"Curso Mobile Android","descricao"=>"O curso te ensina a criar apps","preco"=> 1400 , "img"=>"./img/thor.jpg"],
-    "produto3" => ["nome" =>"Curso Marketing Digital","descricao"=>"O curso te ensina a criar apps","preco"=> 1100 , "img"=>"./img/thor.jpg"]
+    "produto1" => ["nome" =>"Curso Fullstack","descricao"=>"O curso fullstack ensina a roubar dados de cartões","preco"=> 1200 , "img"=>"./img/thor.jpg"],
+    "produto2" => ["nome" =>"Curso Mobile Android","descricao"=>"O curso mobile android te ensina a não ter vida social","preco"=> 1400 , "img"=>"  ./img/thor.jpg"],
+    "produto3" => ["nome" =>"Curso Marketing Digital","descricao"=>"O curso marketing Digital te ensina a falar mentiras","preco"=> 1100 , "img"=>"./img/thor.jpg"]
 ];
+
+$produtos = addProduto("Curso de UX","Curso incrivel", 2000, "img/thor.jpg", $produtos);
 
 $categorias = ["Cursos", "Tutoriais", "Artigos", "Forum", "Códicos"];
 ?>
@@ -84,7 +88,7 @@ $categorias = ["Cursos", "Tutoriais", "Artigos", "Forum", "Códicos"];
                     <p class="card-text"><?php echo $produto["descricao"]; ?></p>
                     <h4 class="text-success">R$<?php echo $produto["preco"]; ?></a>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?php echo $chave ?>">
-                        Comprar
+                        Vem BB
                     </button>
                 </div>
             </div>

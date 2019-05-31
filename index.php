@@ -1,81 +1,11 @@
-<?php 
-include "funcoes.php"
-$usuario = logarUsuario("Tiago Ferreira", 1);
-
-//$usuario = "";
-
-$produtos = [
-    "produto1" => ["nome" =>"Curso Fullstack","descricao"=>"O curso fullstack ensina a roubar dados de cartões","preco"=> 1200 , "img"=>"./img/thor.jpg"],
-    "produto2" => ["nome" =>"Curso Mobile Android","descricao"=>"O curso mobile android te ensina a não ter vida social","preco"=> 1400 , "img"=>"  ./img/thor.jpg"],
-    "produto3" => ["nome" =>"Curso Marketing Digital","descricao"=>"O curso marketing Digital te ensina a falar mentiras","preco"=> 1100 , "img"=>"./img/thor.jpg"]
-];
-
-$produtos = addProduto("Curso de UX","Curso incrivel", 2000, "img/thor.jpg", $produtos);
-
-$categorias = ["Cursos", "Tutoriais", "Artigos", "Forum", "Códicos"];
-?>
 
 <!DOCTYPE html>
 <html lang="br">
-<head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Loja Virtual</title>
-    <!--bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-</head>
+<?php include "head.php"; ?>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Curso</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav">
-
-                            <?php if(isset($usuario) && $usuario != "" && $usuario['logado']): ?>
-
-                            <?php if($usuario['nivelAcesso']== 0): ?>      
-                        
-
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Ações<span class="sr-only">(current)</span></a>
-                            </li>
-                            <?php else: ?>
-                                <li class="nav-item active">
-                                <a class="nav-link" href="#">Perfil<span class="sr-only">(current)</span></a>
-                            </li> 
-
-                            <?php endif; ?> <!-- Else do if da variavel usuario existente -->
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"> Olá <?php echo $usuario['nome']; ?></a>
-                            </li>
-
-                            <?php else: ?>
-
-
-                                    <li class="nav-item">
-                                <a class="nav-link" href="#"> Login </a>
-                            </li> 
-                            <?php endif;?>               
-                </ul>
-            </div>
-        </nav>
-        <nav>
-        <ul class="row mt-3 justify-content-center">
-            <?php foreach($categorias as $categoria): ?>
-                <li class="col-md-2"><?=$categoria?></li>
-            <?php endforeach; ?>
-        </ul>
-        </nav>
-    </header>
-
+    
+    <?php include "header.php"; ?> 
     <main class="container mt-5 mt-3">
         <section class="row">
         <!--Coluna para segurar o card-->

@@ -1,6 +1,6 @@
 <?php 
 
-include "funcoes.php";
+include_once "funcoes.php";
 //Aula sobre funções //
 
 
@@ -12,15 +12,17 @@ $usuario = logarUsuario("Tiago Ferreira", 1);
 
 $produtos = [
     
-    "produto" =>["nome"=>"Curso Fullstack","descricao"=>"O curso fullstack ensina a roubar dados de cartões","preco"=> 1200, "img"=>"img/thor.jpg"],
+    "produto" =>["nome"=>"Curso Fullstack","descricao"=>"O curso fullstack ensina a roubar dados de cartões","preco"=> 1200, "img"=>"img/letraP.png"],
 
-    "produto2" =>["nome"=>"Curso Mobile","descricao"=>"O curso te ensina a não ter vida social","preco"=> 1300,"img"=>"img/thor.jpg"],
+    "produto2" =>["nome"=>"Curso Mobile","descricao"=>"O curso te ensina a não ter vida social","preco"=> 1300,"img"=>"img/letraH.png"],
     
-    "produto3" =>["nome"=>"Marketing Digital","descricao"=>"O curso te ensina a mentir","preco"=> 1300,"img"=>"img/thor.jpg"]    
+    "produto3" =>["nome"=>"Marketing Digital","descricao"=>"O curso te ensina a mentir","preco"=> 1300,"img"=>"img/letraP.png"]    
      
 ]; 
 
-$produtos = addProduto("Curso de UX", "Curso Incrível", 2000, 'img/thor.jpg',$produtos);
+$produtos = addProduto("Curso de UX", "Curso Incrível", 2000, 'img/whysoseriouns.jpg',$produtos);
+$produtos = addProduto("Curso de UX", "Curso Incrível", 2000, 'img/whysoseriouns.jpg',$produtos);
+$produtos = addProduto("Curso de UX", "Curso Incrível", 2000, 'img/whysoseriouns.jpg',$produtos);
 
 
 $categorias = ["cursos", "Tutoriais", "Artigos", "Forum", "Codigos"];

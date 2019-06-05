@@ -10,20 +10,12 @@ $usuario = logarUsuario("Tiago Ferreira", 1);
 
 //Aula sobre o laço for envolvendo arrays.
 
-$produtos = [
-    
-    "produto" =>["nome"=>"Curso Fullstack","descricao"=>"O curso fullstack ensina a roubar dados de cartões","preco"=> 1200, "img"=>"img/letraP.png"],
+$jsonProdutos = file_get_contents('Produtos.json');
 
-    "produto2" =>["nome"=>"Curso Mobile","descricao"=>"O curso te ensina a não ter vida social","preco"=> 1300,"img"=>"img/letraH.png"],
-    
-    "produto3" =>["nome"=>"Marketing Digital","descricao"=>"O curso te ensina a mentir","preco"=> 1300,"img"=>"img/letraP.png"]    
-     
-]; 
+$produtos = json_decode($jsonProdutos, true);
+$produtos = $produtos['Produtos'];
 
-$produtos = addProduto("Curso de UX", "Curso Incrível", 2000, 'img/whysoseriouns.jpg',$produtos);
-$produtos = addProduto("Curso de UX", "Curso Incrível", 2000, 'img/whysoseriouns.jpg',$produtos);
-$produtos = addProduto("Curso de UX", "Curso Incrível", 2000, 'img/whysoseriouns.jpg',$produtos);
-
+addProduto("Curso Mobile Android", "Curso para criar um app", 5000, "img/letraH.png");
 
 $categorias = ["cursos", "Tutoriais", "Artigos", "Forum", "Codigos"];
 

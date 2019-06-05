@@ -5,11 +5,20 @@ function logarUsuario ($nome, $nivelDeAcesso) {
     return $usuario; 
 };
 
-function addProduto ($nome,$descricao,$preco, $img, $produtos){
-$novoProduto = ['nome' =>$nome, 'descricao'=>$descricao, 'preco'=>$preco, 'img' =>$img];
+function addProduto ($nome,$descricao,$preco, $img){
+$jsonProdutos = file_get_contents('Produtos.json');
+$produtos = json_decode($jsonProdutos, true);
+
 $chave = count($produtos) + 1;
-$produtos["produto$chave"] = $novoProduto;
-return $produtos;
+$novoProduto = ["id"=>"produto$chave", 'nome' =>$nome, 'descricao'=>$descricao, 'preco'=>$preco, 'img' =>$img];
+
+$produtos["Produtos"][]=$novoProduto;
+
+$jsonProdutos = json_encode($produtos);
+
+file_put_contents('Produtos.json', $jsonProdutos);
+
+return true;
 };
 
 function validarNome($nome){
